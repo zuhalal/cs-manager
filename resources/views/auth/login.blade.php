@@ -4,7 +4,7 @@
     Login
 @endsection
 
-@section('content')
+@section('guestContent')
     <div class="flex items-center justify-center w-full h-full">
         <div class="flex flex-col gap-4">
             <div>
