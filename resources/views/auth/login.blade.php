@@ -6,7 +6,7 @@
 
 @section('guestContent')
     <div class="flex items-center justify-center w-full h-full">
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col w-64 gap-4 lg:w-72">
             <div>
                 <h1 class="text-3xl font-bold text-center">CS Manager</h1>
             </div>
@@ -25,20 +25,20 @@
                             @enderror                            
                             <div class="flex flex-col">
                                 <label for="email" @error('email') class="text-red-600" @enderror>Email</label>
-                                <input type="email" id="email" name="email" class="p-2 placeholder-gray-600 transition duration-200 ease-out bg-black bg-opacity-25 border-2 rounded-lg focus:outline-none focus:border-blue-600 @error('email')
+                                <input type="email" id="email" name="email" class="p-2 border-transparent placeholder-gray-600 transition duration-200 ease-out bg-black bg-opacity-25 border-2 rounded-lg focus:outline-none focus:border-blue-600 @error('email')
                                 border-red-600 @enderror" value="{{ old('email') }}" placeholder="johndoe@mail.com" required>
                                 @error('email')  <small class="px-2 font-semibold text-red-600">{{ $message }}</small> @enderror
                                
                             </div>
                             <div class="flex flex-col">
                                 <label for="password" @error('password') class="text-red-600" @enderror>Password</label>
-                                <input type="password" id="password" name="password" class="p-2 transition duration-200 ease-out bg-black bg-opacity-25 border-2 rounded-lg focus:outline-none focus:border-blue-600 @error('password')
+                                <input type="password" id="password" name="password" class="p-2 border-transparent transition duration-200 ease-out bg-black bg-opacity-25 border-2 rounded-lg focus:outline-none focus:border-blue-600 @error('password')
                                 border-red-600 @enderror" value="{{ old('password') }}" required>
                                 @error('password')  <small class="px-2 font-semibold text-red-600">{{ $message }}</small> @enderror
                             </div>
                         </div>
-                        <label for="remember-me" class="flex items-center gap-1">
-                            <input type="checkbox" id="remember-me" name="remember_me" class="w-4 h-4 bg-red-600"> Remember Me
+                        <label for="remember-me" class="flex items-center gap-2 hover:text-blue-600">
+                            <input type="checkbox" id="remember-me" name="remember_me" class="w-4 h-4 rounded "> Remember Me
                         </label>
                     </div>
                     <div>
