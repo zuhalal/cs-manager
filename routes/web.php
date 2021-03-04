@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route('dashboard');
 });
+
+Route::get('dashboard', 'DashboardController@index')->middleware('auth')->name('dashboard');
 
 require_once __DIR__.'/auth/auth.routes.php';
