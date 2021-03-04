@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   purge: [
     "./resources/**/*.blade.php",
@@ -6,14 +8,19 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        serif: ["Montserrat", ...defaultTheme.fontFamily.serif]
+      }
+    }
   },
   variants: {
     extend: {
       borderWidth: ["hover", "focus"],
       textColor: ["disabled"],
-      backgroundColor: ["disabled"]
+      backgroundColor: ["disabled"],
+      cursor: ["hover"]
     }
   },
-  plugins: []
+  plugins: [require("@tailwindcss/forms")]
 };
