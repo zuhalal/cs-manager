@@ -12,8 +12,8 @@ const loginFormValidation = () => {
       : "Sign In";
   };
 
-  emailField.addEventListener("change", submissionEnabler);
-  passwordField.addEventListener("change", submissionEnabler);
+  emailField.addEventListener("keyup", submissionEnabler);
+  passwordField.addEventListener("keyup", submissionEnabler);
 };
 
 loginFormValidation();
