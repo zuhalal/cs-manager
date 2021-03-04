@@ -6,20 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>
         CS Manager | @yield('title')
     </title>
 </head>
-<body>
-    <main class="w-full h-screen @auth flex @endauth">
+<body class="font-serif">
+    <main class="w-full h-screen @auth flex bg-gray-200 @endauth">
         @guest
             @yield('guestContent')
         @endguest
         @auth
             @include('layouts.components.sidebar')
-            <div class="w-5/6 ">
-                @include('layouts.components.sidebar')                
-                <div>
+            <div class="w-5/6">
+                @include('layouts.components.navbar', [
+                    'username' => Auth::user()->name
+                ])                
+                <div class="flex flex-col h-full gap-3 p-6">
+                    @yield('head')
                     @yield('authContent')
                 </div>
             </div>
