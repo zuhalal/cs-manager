@@ -18,7 +18,7 @@
         @endguest
         @auth
             @include('layouts.components.sidebar')
-            <div class="w-5/6">
+            <div class="flex flex-col w-5/6">
                 @include('layouts.components.navbar', [
                     'username' => Auth::user()->name
                 ])                
