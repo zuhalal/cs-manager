@@ -17,6 +17,9 @@ Route::get('/', function () {
     return redirect()->route('dashboard');
 });
 
-Route::get('dashboard', 'DashboardController@index')->middleware('auth')->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::resource('operator', 'OperatorController');
+});
 
 require_once __DIR__.'/auth/auth.routes.php';
